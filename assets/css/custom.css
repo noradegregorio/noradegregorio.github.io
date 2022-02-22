@@ -152,6 +152,12 @@ footer p.privacy a:focus,
 footer p.privacy a:hover, 
 footer p.privacy a:active { color: var(--black-000); text-decoration-color: var(--black-000) }
 
+p {
+    color : white
+}
+
+
+
 /*portoflio/index.html*/
 header.hero-block { background-color: var(--blue-800) }
 footer { background-color: var(--blue-800) }

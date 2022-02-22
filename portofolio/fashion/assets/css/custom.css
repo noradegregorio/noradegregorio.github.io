@@ -1,0 +1,31 @@
+/* Add your custom styles here */ 
+section.theme-light.section-selector-1 { background-color: var(--green-800) }
+section.theme-light.section-selector-1 h2 { color: var(--white-000) }
+section.theme-light.section-selector-1 p { color: var(--white-000) } 
+section.theme-light.section-selector-1 li { color: var(--white-000) } 
+
+section.theme-light.section-selector-2 { background-color: var(--trend-400) }
+
+section.theme-light.section-selector-3 {
+    background-color: var(--white-000);
+}
+
+body { font-family: 'Playfair Display', serif ;}
+
+/* Passive link states */
+a:link, a:visited {
+    text-decoration: none;
+    color: white
+}
+
+/* Interactive link states */
+a:focus, a:hover, a:active {
+    /* style rules go here */
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+

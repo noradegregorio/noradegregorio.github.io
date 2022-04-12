@@ -155,12 +155,26 @@ footer p.privacy a:active { color: var(--black-000); text-decoration-color: var(
 p {
     color : white
 }
+/* header */
+header.hero-block a.btn-primary { border: transparent }
+header.hero-block a.btn-primary:link,
+header.hero-block a.btn-primary:visited { background-color: var(--green-700) }
 
+header.hero-block a.btn-primary:focus,
+header.hero-block a.btn-primary:hover,
+header.hero-block a.btn-primary:active { background-color: var(--green-800) }
 
 
 /*portoflio/index.html*/
-header.hero-block { background-color: var(--blue-800) }
-footer { background-color: var(--blue-800) }
+.theme-one a.btn-primary{border: transparent;}
+.theme-one a.btn-primary:link,
+.theme-one a.btn-primary :visited { background-color: var(--green-700); }
+.theme-one a.btn-primary:focus,
+.theme-one a.btn-primary:hover,
+.theme-one a.btn-primary:active { background-color: var(--green-800);}
+.theme-one h3 {color: #000; text-align: center;}
+.theme-one p {color: var(--gray-900); text-align: center;}
+
 
 /*contact/index.html*/
 header.hero-block { background-color: var(--green-700) }

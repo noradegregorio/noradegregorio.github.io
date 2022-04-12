@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Random Quotes Generator Project | Mary Smith | Front-end Developer | </title>
+    <title>JavaScript Random Quotes Generator Project | Nora De Gregorio | Front-end Developer | </title>
     <meta name="description" content="Uses the Fetch API to retrieve a randomly-choosen selection of ten inspiring quotations.">
 
 	<!-- Stylesheets -->
@@ -14,14 +14,21 @@
     <style>
 
         /* ============ Header Colours =============*/
-        header.hero-block-js { background-color: var(--gray-200) }
+        header.hero-block-js { background-color: #198754 }
         header.hero-block-js h1 { color: #222 }
-        header.hero-block-js h2 { color: var(--gray-700) }
+        header.hero-block-js h2 { color: #222 }
 
         /* Main Colours */
         .theme-js { 
             background-color: #fff;
             /* background-image: linear-gradient(147deg, #000000 0%, #04619f 74%); */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 80%;
+            text-align: center;
         }
 
         .theme-js .col-2 { background-color: var(--gray-200) }
@@ -36,6 +43,76 @@
 
         /* .theme-js a.btn { background-image: linear-gradient(to right,#e052a0,#f15c41) } */
         /* .theme-js a.btn:hover { filter: brightness(160%) saturate(140%) } */
+
+        /* Footer */
+        footer h2 { color: #fff; }
+        footer h3 { color: #fff; }
+        footer { background-color: #0f5132; }
+        .footer-links, .footer-icons {  color: #fff; }
+
+        /* Menu */
+        .container-menu a#btn-cta:link,
+        .container-menu a#btn-cta:visited { background-color: #0f5132}
+        .container-menu a#btn-cta:link,
+        .container-menu a#btn-cta:visited { border-color: #0f5132}
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { border-color: #0a3622 }
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { border-color: #0a3622 }
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { background-color: #0a3622 }
+        .container-menu.menu-desktop { background-color: #198754 }
+        .container-menu.menu-mobile { background-color: #198754 }
+        .container-menu.menu-mobile ul.mobile-display { background-color: #198754 }
+        .container-menu a:link,
+        .container-menu a:visited { color: #fff }
+        .container-menu a:focus,
+        .container-menu a:hover,
+        .container-menu a:active { color: #ced4da }
+
+        /* Main Colours */
+        .theme-js { 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 80%;
+            text-align: center;
+        }
+
+        .theme-js h3 { color: #495057; margin-bottom: 35px;}
+        .theme-js h2 { color: #212529; }
+        .theme-js button { padding: 15px 35px; }
+        .container-flex { margin: 50px auto; }
+
+        .quotes {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            margin: auto;
+        }
+
+        /* Button */
+        .theme-js a.btn { 
+            margin-top: 35px;
+            padding: 15px 50px; 
+            border: none; 
+            color: #fff; 
+            background-color: #0f5132; 
+            transition: 0.2s 
+        }
+        .theme-js a.btn:hover { background-color: #0a3622 }
+
+        /* Footer */
+        footer h2 { color: #fff; }
+        footer h3 { color: #fff; }
+        footer { background-color: #0f5132; }
+        .footer-links, .footer-icons {  color: #fff; }
 
     </style>
 
@@ -54,7 +131,7 @@
         <ul class="">
             <li><a href="../../../index.html">Home</a></li>
             <li><a href="../../../portfolio/index.html">Portfolio</a></li>
-            <li><a href="../../../contact/index.html" id="btn-cta"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
+            <li><a href="../../../contact/index.html" id="btn-cta" class="btn btn-primary btn-rounded bounce-in-top"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
         </ul>
         <div class="item-icon">
             <div class="bar1"></div>
@@ -74,14 +151,77 @@
     <!-- main content with sections -->
     <main>
         
-        <section class="container-flex theme-js" id="conta">
+        <section class="container-flex theme-js">
 
+            <div class="col-1 text-center">
+                <h2>Inspiring Quotations</h2>
+                <h3>Click the button below to be inspired by nine uplifting quotations from wise men and women through the ages.</h3>
+    
+                <a class="btn btn-primary btn-rounded" id="btn-quotes" onclick="UpdateQuotations()">View Quotes</a>
+            </div>
+
+            <div class="quotes" id="quotes-box">
+                <div class="col-3">
+                    <p id="text-1">Text of quotation here 1.</p>
+                    <h3 id="author-1">Author 1</h3>
+                </div>
+    
+                <div class="col-3">
+                    <p id="text-2">Text of quotation here 2.</p>
+                    <h3 id="author-2">Author 2</h3>
+                </div>
+    
+                <div class="col-3">
+                    <p id="text-3">Text of quotation here 3.</p>
+                    <h3 id="author-3">Author 3</h3>
+                </div>
+            </div>
 
         </section>
 
     </main>
 
     <script>
+        document.body.style.backgroundColor = "#fff4d9";
+
+document.querySelector("#btn-quotes").addEventListener("change", UpdateQuotations);
+
+var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+        var status = xhr.status;
+        if (status === 200)
+        {
+            callback(null, xhr.response);
+        }
+        else
+        {
+            callback(status, xhr.response);
+        }
+    };
+    xhr.send();
+};
+
+function UpdateQuotations() {
+    getJSON('https://type.fit/api/quotes',
+    function(err, data) {
+        if (err !== null) 
+        {
+            alert('Something went wrong: ' + err);
+        }
+        else
+        {
+            for (let i = 1; i <= 3; i++)
+            {
+                const r = Math.floor(Math.random() * data.length);
+                document.getElementById("text-" + i).innerHTML = data[r].text;
+                document.getElementById("author-" + i).innerHTML = data[r].author;
+            }
+        }
+    });
+}
 
     </script>
 
@@ -89,7 +229,7 @@
     <!-- footer -->
 	<footer>
 
-		<h2>Your Name Here</h2>
+		<h2>Nora De Gregorio</h2>
 
 		<h3>Excellence in digital creation</h3>
 
@@ -100,7 +240,6 @@
 		</ul>
 
 		<ul class="footer-icons">
-			<li><a href="https://www.linkedin.com/nnnnnnnnnnn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 			<li><a href="https://github.com/nnnnnnnnnn" target="_blank"><i class="fab fa-github-square"></i></a></li>
 		</ul>
 

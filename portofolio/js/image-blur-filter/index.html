@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Image Blur Filter Project | Mary Smith | Front-end Developer | </title>
+    <title>JavaScript Image Blur Filter Project | Nora De Gregorio | Front-end Developer | </title>
     <meta name="description" content="Uses CSS variables and HTML custom data attributes to adjust the filter blur property of an image.">
 
 	<!-- Stylesheets -->
@@ -14,9 +14,11 @@
     <style>
 
         /* ============ Header Colours =============*/
-        header.hero-block-js { background-color: var(--gray-200) }
-        header.hero-block-js h1 { color: #222 }
-        header.hero-block-js h2 { color: var(--gray-700) }
+        
+
+        header.hero-block-js { background-color: #198754}
+        header.hero-block-js h1 { color: #222;  }
+        header.hero-block-js h2 { color: #222; }
 
         /* Main Colours */
         .theme-js { 
@@ -29,13 +31,13 @@
         .theme-js p { color: #222 }
 
         /* Button Colours: passive state */
-        .theme-js a.btn { color: #fff; background-color: blue; transition: 0.2s }
+        .theme-js a.btn { color: #fff; background-color:#0f5132; transition: 0.2s }
 
         /* Button Colours: active state */
-        .theme-js a.btn:hover { background-color: darkblue }
+        .theme-js a.btn:hover { background-color: #0a3622 }
 
-        /* .theme-js a.btn { background-image: linear-gradient(to right,#e052a0,#f15c41) } */
-        /* .theme-js a.btn:hover { filter: brightness(160%) saturate(140%) } */
+        .theme-js a.btn { background-image: linear-gradient(to right,#e052a0,#f15c41) } 
+        .theme-js a.btn:hover { filter: brightness(160%) saturate(140%) } 
 
         :root {
             --spacing: 10px;
@@ -60,6 +62,36 @@
             filter: blur(var(--blur));
         }
 
+        /* Footer */
+        /* Footer */
+        footer h2 { color: #fff; }
+        footer h3 { color: #fff; }
+        footer { background-color: #0f5132; }
+        .footer-links, .footer-icons {  color: #fff; }
+
+        /* Menu */
+        .container-menu a#btn-cta:link,
+        .container-menu a#btn-cta:visited { background-color: #0f5132}
+        .container-menu a#btn-cta:link,
+        .container-menu a#btn-cta:visited { border-color: #0f5132}
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { border-color: #0a3622 }
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { border-color: #0a3622 }
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { background-color: #0a3622 }
+        .container-menu.menu-desktop { background-color: #198754 }
+        .container-menu.menu-mobile { background-color: #198754 }
+        .container-menu.menu-mobile ul.mobile-display { background-color: #198754 }
+        .container-menu a:link,
+        .container-menu a:visited { color: #fff }
+        .container-menu a:focus,
+        .container-menu a:hover,
+        .container-menu a:active { color: #ced4da }
+
     </style>
 
 	<!-- Font Awesome 6.1 icons -->
@@ -77,7 +109,7 @@
         <ul class="">
             <li><a href="../../../index.html">Home</a></li>
             <li><a href="../../../portfolio/index.html">Portfolio</a></li>
-            <li><a href="../../../contact/index.html" id="btn-cta"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
+            <li><a href="../../../contact/index.html" id="btn-cta" class="btn btn-primary btn-rounded bounce-in-top"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
         </ul>
         <div class="item-icon">
             <div class="bar1"></div>
@@ -117,6 +149,21 @@
     </main>
 
     <script>
+        // Get controls
+        const inputs = document.querySelectorAll('.controls input');
+
+        // Attach event listeners
+        inputs.forEach(input => input.addEventListener('change', handleUpdate));
+        inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+            
+        function handleUpdate() {
+
+            // dataset retrieves the suffix from the data object
+            const suffix = this.dataset.sizing || '';
+
+            // Set a style property (css variable from the page);
+            document.querySelector(".theme-js").style.setProperty(`--${this.name}`, this.value + suffix); 
+        }
 
     </script>
 
@@ -124,7 +171,7 @@
     <!-- footer -->
 	<footer>
 
-		<h2>Your Name Here</h2>
+		<h2>Nora De Gregorio</h2>
 
 		<h3>Excellence in digital creation</h3>
 
@@ -135,7 +182,6 @@
 		</ul>
 
 		<ul class="footer-icons">
-			<li><a href="https://www.linkedin.com/nnnnnnnnnnn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 			<li><a href="https://github.com/nnnnnnnnnn" target="_blank"><i class="fab fa-github-square"></i></a></li>
 		</ul>
 

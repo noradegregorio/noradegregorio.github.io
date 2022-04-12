@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Random Colour Generator Project | Mary Smith | Front-end Developer | </title>
+    <title>JavaScript Random Colour Generator Project | Nora De Gregorio | Front-end Developer | </title>
     <meta name="description" content="Uses an array of hexadecimal values to randomly generate a background colour for the web page.">
 
 	<!-- Stylesheets -->
@@ -14,28 +14,72 @@
     <style>
 
         /* ============ Header Colours =============*/
-        header.hero-block-js { background-color: var(--gray-200) }
+        header.hero-block-js { background-color: #198754}
         header.hero-block-js h1 { color: #222 }
-        header.hero-block-js h2 { color: var(--gray-700) }
+        header.hero-block-js h2 { color: #222 }
 
         /* Main Colours */
         .theme-js { 
-            background-color: #fff;
-            /* background-image: linear-gradient(147deg, #000000 0%, #04619f 74%); */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 50%;
+            text-align: center;
         }
+
+        .theme-js h1 { color: #0f5132; }
+        .theme-js h2 { color: #0a3622; }
+        .theme-js button { padding: 15px 35px; }
+        .container-flex { 
+            margin: 50px auto;
+            background-color: #ffffffaa; 
+            border-radius: 35px;
+        }
+
 
         .theme-js .col-2 { background-color: var(--gray-200) }
         .theme-js h3 { color: #222 }
         .theme-js p { color: #222 }
 
         /* Button Colours: passive state */
-        .theme-js a.btn { color: #fff; background-color: blue; transition: 0.2s }
+        .theme-js a.btn { color: #fff; background-color: #0f5132; transition: 0.2s }
 
         /* Button Colours: active state */
-        .theme-js a.btn:hover { background-color: darkblue }
+        .theme-js a.btn:hover { background-color: #0a3622 }
 
-        .theme-js a.btn { background-image: linear-gradient(to right,#e052a0,#f15c41) } */
+        /*.theme-js a.btn { background-image: linear-gradient(to right,#e052a0,#f15c41) } 
         .theme-js a.btn:hover { filter: brightness(160%) saturate(140%) } */
+
+        /* Footer */
+        footer h2 { color: #fff; }
+        footer h3 { color: #fff; }
+        footer { background-color: #0f5132; }
+        .footer-links, .footer-icons {  color: #fff; }
+
+        /* Menu */
+        .container-menu a#btn-cta:link,
+        .container-menu a#btn-cta:visited { background-color: #0f5132}
+        .container-menu a#btn-cta:link,
+        .container-menu a#btn-cta:visited { border-color: #0f5132}
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { border-color: #0a3622 }
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { border-color: #0a3622 }
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { background-color: #0a3622 }
+        .container-menu.menu-desktop { background-color: #198754 }
+        .container-menu.menu-mobile { background-color: #198754 }
+        .container-menu.menu-mobile ul.mobile-display { background-color: #198754 }
+        .container-menu a:link,
+        .container-menu a:visited { color: #fff }
+        .container-menu a:focus,
+        .container-menu a:hover,
+        .container-menu a:active { color: #ced4da }
 
     </style>
 
@@ -54,7 +98,7 @@
         <ul class="">
             <li><a href="../../../index.html">Home</a></li>
             <li><a href="../../../portfolio/index.html">Portfolio</a></li>
-            <li><a href="../../../contact/index.html" id="btn-cta"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
+            <li><a href="../../../contact/index.html" id="btn-cta" class="btn btn-primary btn-rounded bounce-in-top"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
         </ul>
         <div class="item-icon">
             <div class="bar1"></div>
@@ -75,6 +119,9 @@
     <main>
         
         <section class="container-flex theme-js" id="conta">
+            <h1>Random Colour Generator</h1>
+            <h2>Background Colour<br>&nbsp;<span id="color-display">#fff4d9</span></h2>
+            <button class="btn btn-primary btn-rounded" id="btn-color" onclick="colorGenerator()"><i class="fa-solid fa-paint-roller"></i> Click me</button>
 
         </section>
 
@@ -102,7 +149,7 @@
     <!-- footer -->
 	<footer>
 
-		<h2>Your Name Here</h2>
+		<h2>Nora De Gregorio</h2>
 
 		<h3>Excellence in digital creation</h3>
 
@@ -113,7 +160,6 @@
 		</ul>
 
 		<ul class="footer-icons">
-			<li><a href="https://www.linkedin.com/nnnnnnnnnnn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 			<li><a href="https://github.com/nnnnnnnnnn" target="_blank"><i class="fab fa-github-square"></i></a></li>
 		</ul>
 

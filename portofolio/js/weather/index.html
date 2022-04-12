@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Dublin Weather Project | Mary Smith | Front-end Developer | </title>
+    <title>JavaScript Dublin Weather Project | Nora De Gregorio | Front-end Developer | </title>
     <meta name="description" content="Uses the Fetch API to retrieve current weather information for the city of Dublin, Ireland. ">
 
 	<!-- Stylesheets -->
@@ -14,9 +14,9 @@
     <style>
 
         /* ============ Header Colours =============*/
-        header.hero-block-js { background-color: var(--gray-200) }
-        header.hero-block-js h1 { color: #222 }
-        header.hero-block-js h2 { color: var(--gray-700) }
+        header.hero-block-js { background-color: #198754}
+        header.hero-block-js h1 { color: #222;  }
+        header.hero-block-js h2 { color: #222; }
 
         /* Main Colours */
         .theme-js { 
@@ -29,13 +29,78 @@
         .theme-js p { color: #222 }
 
         /* Button Colours: passive state */
-        .theme-js a.btn { color: #fff; background-color: blue; transition: 0.2s }
+        .theme-js a.btn { color: #fff; background-color: #0f5132; transition: 0.2s }
 
         /* Button Colours: active state */
-        .theme-js a.btn:hover { background-color: darkblue }
+        .theme-js a.btn:hover { background-color: #0a3622 }
 
         /* .theme-js a.btn { background-image: linear-gradient(to right,#e052a0,#f15c41) } */
         /* .theme-js a.btn:hover { filter: brightness(160%) saturate(140%) } */
+
+        /* Footer */
+        footer h2 { color: #fff; }
+        footer h3 { color: #fff; }
+        footer { background-color: #0f5132; }
+        .footer-links, .footer-icons {  color: #fff; }
+
+        /* Menu */
+        .container-menu a#btn-cta:link,
+        .container-menu a#btn-cta:visited { background-color: #0f5132}
+        .container-menu a#btn-cta:link,
+        .container-menu a#btn-cta:visited { border-color: #0f5132}
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { border-color: #0a3622 }
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { border-color: #0a3622 }
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { background-color: #0a3622 }
+        .container-menu.menu-desktop { background-color: #198754 }
+        .container-menu.menu-mobile { background-color: #198754 }
+        .container-menu.menu-mobile ul.mobile-display { background-color: #198754 }
+        .container-menu a:link,
+        .container-menu a:visited { color: #fff }
+        .container-menu a:focus,
+        .container-menu a:hover,
+        .container-menu a:active { color: #ced4da }
+
+        .theme-js .box-weather { 
+            margin: 0 auto; width: 400px; max-width: 80%;
+            background-image: linear-gradient(rgb(0,0,0,0.5),rgb(0,0,0,0.5));
+            padding: 32px;
+        }
+
+        .theme-js h3 { color: #fff; font-size: 32px; margin-bottom: 32px }
+        .theme-js p { color: #fff; font-weight: bold }
+
+        .theme-js p a { color: #fff !important; font-weight: bold }
+
+        .data-table {
+            border-collapse: collapse;
+            font-size: 18px;
+            width: 100%;
+            overflow: scroll; 
+            margin-bottom: 56px;
+            background-color: transparent;
+        }
+
+        .data-table td { padding: 12px 0; color:#fff; text-align: left; }
+
+        .data-table td:first-of-type { padding-left: 0; padding-right: 18px;  }
+
+        .data-table td:first-of-type span { background-color: #0f5132; color:#fff; padding: 4px 12px; border-radius: 5px }
+
+        .data-table td:last-of-type  { padding-left: 18px; padding-right: 0;  }
+
+        .table-lines tr { border-bottom: solid 1px #fff }
+
+        @media(max-width: 768px) {
+            .theme-js .box-weather { max-width: 95%; padding: 20px }
+            .theme-js h3 { font-size: 26px; margin-bottom: 22px; line-height: 1.3 }
+            .theme-js p { font-size: 16px }
+        }
 
     </style>
 
@@ -54,7 +119,7 @@
         <ul class="">
             <li><a href="../../../index.html">Home</a></li>
             <li><a href="../../../portfolio/index.html">Portfolio</a></li>
-            <li><a href="../../../contact/index.html" id="btn-cta"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
+            <li><a href="../../../contact/index.html" id="btn-cta" class="btn btn-primary btn-rounded bounce-in-top"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
         </ul>
         <div class="item-icon">
             <div class="bar1"></div>
@@ -74,22 +139,29 @@
     <!-- main content with sections -->
     <main>
         
-        <section class="container-flex theme-js">
+        <section class="container-flex theme-js" style="background-image: url(assets/img/dublin-day.jpg);">
+            <div class="box-weather">
+                <h3>Weather now in Dublin city, Ireland.</h3>
+
+                <table class="data-table table-lines" id="table-weather-dublin">
+                    <tbody>
+                        
+                    </tbody>
+                  </table>
+                  <p>Data from <a href="https://openweathermap.org/" target="_blank">Open Weather</a></p>
+            </div>
 
         </section>
 
     </main>
 
-    <script>
-
-        
-    </script>
+    <script src="assets/js/app.js"></script>
 
     
     <!-- footer -->
 	<footer>
 
-		<h2>Your Name Here</h2>
+		<h2>Nora De Gregorio</h2>
 
 		<h3>Excellence in digital creation</h3>
 
@@ -100,7 +172,6 @@
 		</ul>
 
 		<ul class="footer-icons">
-			<li><a href="https://www.linkedin.com/nnnnnnnnnnn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 			<li><a href="https://github.com/nnnnnnnnnn" target="_blank"><i class="fab fa-github-square"></i></a></li>
 		</ul>
 

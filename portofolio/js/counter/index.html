@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Counter Project | Mary Smith | Front-end Developer | </title>
+    <title>JavaScript Counter Project | Nora De Gregorio | Front-end Developer | </title>
     <meta name="description" content="An increment and decrement counter that changes the colour of the number displayed on the web page.">
 
 	<!-- Stylesheets -->
@@ -14,9 +14,9 @@
     <style>
 
         /* ============ Header Colours =============*/
-        header.hero-block-js { background-color: var(--gray-200) }
+        header.hero-block-js { background-color: #198754 }
         header.hero-block-js h1 { color: #222 }
-        header.hero-block-js h2 { color: var(--gray-700) }
+        header.hero-block-js h2 { color: #222 }
 
         /* Main Colours */
         .theme-js { 
@@ -29,13 +29,72 @@
         .theme-js p { color: #222 }
 
         /* Button Colours: passive state */
-        .theme-js a.btn { color: #fff; background-color: blue; transition: 0.2s }
+        .theme-js a.btn { color: #fff; background-color: #0f5132; transition: 0.2s }
 
         /* Button Colours: active state */
-        .theme-js a.btn:hover { background-color: darkblue }
+        .theme-js a.btn:hover { background-color: #0a3622 }
 
-        /* .theme-js a.btn { background-image: linear-gradient(to right,#e052a0,#f15c41) } */
-        /* .theme-js a.btn:hover { filter: brightness(160%) saturate(140%) } */
+        /*.theme-js a.btn { background-image: linear-gradient(to right,#e052a0,#f15c41) } 
+        .theme-js a.btn:hover { filter: brightness(160%) saturate(140%) } */
+
+        /* Footer */
+        footer h2 { color: #fff; }
+        footer h3 { color: #fff; }
+        footer { background-color: #0f5132; }
+        .footer-links, .footer-icons {  color: #fff; }
+
+        /* Menu */
+        .container-menu a#btn-cta:link,
+        .container-menu a#btn-cta:visited { background-color: #0f5132}
+        .container-menu a#btn-cta:link,
+        .container-menu a#btn-cta:visited { border-color: #0f5132}
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { border-color: #0a3622 }
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { border-color: #0a3622 }
+        .container-menu a#btn-cta:focus,
+        .container-menu a#btn-cta:hover,
+        .container-menu a#btn-cta:active { background-color: #0a3622 }
+        .container-menu.menu-desktop { background-color: #198754 }
+        .container-menu.menu-mobile { background-color: #198754 }
+        .container-menu.menu-mobile ul.mobile-display { background-color: #198754 }
+        .container-menu a:link,
+        .container-menu a:visited { color: #fff }
+        .container-menu a:focus,
+        .container-menu a:hover,
+        .container-menu a:active { color: #ced4da }
+
+        /* Main Colours */
+        .theme-js { 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 50%;
+            text-align: center;
+        }
+
+        .theme-js h1 { color: #212529; font-size: 4rem;}
+        .theme-js span {
+            font-size: 6rem;
+            font-weight: bold;
+        }
+        .theme-js button { 
+            padding: 15px 35px;
+            margin: 25px 0.5rem; 
+        }
+        .container-flex { 
+            margin: 50px auto;
+            border-radius: 35px;
+        }
+
+        /* Button */
+        .theme-js button { border: none; color: #fff; background-color: #0f5132; transition: 0.2s }
+        .theme-js button:hover { background-color: #0a3622 }
+
 
     </style>
 
@@ -54,7 +113,7 @@
         <ul class="">
             <li><a href="../../../index.html">Home</a></li>
             <li><a href="../../../portfolio/index.html">Portfolio</a></li>
-            <li><a href="../../../contact/index.html" id="btn-cta"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
+            <li><a href="../../../contact/index.html" id="btn-cta" class="btn btn-primary btn-rounded bounce-in-top"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
         </ul>
         <div class="item-icon">
             <div class="bar1"></div>
@@ -74,7 +133,14 @@
     <!-- main content with sections -->
     <main>
         
-        <section class="container-flex theme-js" id="conta">
+        <section class="container-flex theme-js" id="counter">
+          <h1>Counter</h1>
+            <span id="value">0</span>
+            <div class="button-container">
+                <button class="btn btn-rounded decrease" onclick="Decrease()">Decrease</button>
+                <button class="btn btn-rounded reset" onclick="Reset()">Reset</button>
+                <button class="btn btn-rounded increase" onclick="Increase()">Increase</button>
+            </div>
 
         </section>
 
@@ -82,13 +148,50 @@
 
     <script>
         
+        let count = 0;
+        const value = document.querySelector("#value");
+        const btns = document.querySelectorAll(".btn");
+
+        document.body.style.backgroundColor = "#fff4d9";
+
+        function Increase() {
+          count++;
+          value.innerHTML = count.toString();
+          UpdateColor();
+        }
+
+        function Decrease() {
+          count--;
+          value.innerHTML = count.toString();
+          UpdateColor();
+        }
+
+        function Reset() {
+          count = 0;
+          value.innerHTML = count.toString();
+          UpdateColor();
+        }
+
+        function UpdateColor()
+        {
+          if (count < 0) {
+            document.body.style.backgroundColor = "#e74c3c";
+          }
+          else if (count > 0) {
+            document.body.style.backgroundColor = "#2ecc71";
+          }
+          else {
+            document.body.style.backgroundColor = "#fff4d9";
+          }
+        }
+        
     </script>
 
     
     <!-- footer -->
 	<footer>
 
-		<h2>Your Name Here</h2>
+		<h2>Nora De Gregorio</h2>
 
 		<h3>Excellence in digital creation</h3>
 
@@ -99,7 +202,6 @@
 		</ul>
 
 		<ul class="footer-icons">
-			<li><a href="https://www.linkedin.com/nnnnnnnnnnn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 			<li><a href="https://github.com/nnnnnnnnnn" target="_blank"><i class="fab fa-github-square"></i></a></li>
 		</ul>
 

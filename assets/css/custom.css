@@ -172,8 +172,13 @@ header.hero-block a.btn-primary:active { background-color: var(--green-800) }
 .theme-one a.btn-primary:focus,
 .theme-one a.btn-primary:hover,
 .theme-one a.btn-primary:active { background-color: var(--green-800);}
-.theme-one h3 {color: #000; text-align: center;}
+.theme-one h3 {color: #222; text-align: center;}
 .theme-one p {color: var(--gray-900); text-align: center;}
+.theme-one .col-3 { background-color:#99c3ff;
+    background-image:
+    radial-gradient(at 18% 99%, hsla(124,68%,67%,1) 0px, transparent 50%),
+    radial-gradient(at 17% 84%, hsla(164,80%,69%,1) 0px, transparent 50%),
+    radial-gradient(at 16% 2%, hsla(124,99%,73%,1) 0px, transparent 50%); }
 
 
 /*contact/index.html*/
